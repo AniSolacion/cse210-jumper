@@ -20,15 +20,15 @@ namespace Unit03.Game
             person.Add("   / \\   ");
         }
 
-        public takeRowOffParachute()
+        public void takeRowOffParachute()
         {
             parachute.removeAt(0);
         }
-        public getParachute()
+        public List<string> getParachute()
         {
             return parachute;
         }
-        public getPerson()
+        public List<string> getPerson()
         {
             return person;
         }
