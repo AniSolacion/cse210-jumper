@@ -20,6 +20,14 @@ namespace Unit03.Game
         /// </summary>
         public Director()
         {
+            ioService.WriteText("This is a game of jumper (hangman)");
+            ioService.WriteText("Guess the word before the jumper dies!!");
+            // get new word from word
+            word.
+            ioService.WriteText(word.blanks());
+            ioService.WriteText(parachute.getParachute());
+            ioService.WriteText(parachute.getPerson());
+
         }
 
         /// <summary>
@@ -40,10 +48,6 @@ namespace Unit03.Game
         /// </summary>
         private void GetInputs()
         {
-            ioService.WriteText(hider.location.ToString());
-            int location = ioService.ReadNumber("\nEnter a location [1-1000]: ");
-            seeker.MoveLocation(location);
-
             //Guess letter outputs a bool for if the letter is valid or not.
             bool valid = false;
             if (!valid)
