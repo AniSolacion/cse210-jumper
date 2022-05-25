@@ -24,7 +24,7 @@ namespace Unit03.Game
             ioService.WriteText("Guess the word before the jumper dies!!");
             // get new word from word
             word.
-            ioService.WriteText(word.blanks());
+            ioService.WriteText(word.getBlanks());
             ioService.WriteText(parachute.getParachute());
             ioService.WriteText(parachute.getPerson());
 
