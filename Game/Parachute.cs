@@ -32,6 +32,10 @@ namespace Unit03.Game
         {
             return person;
         }
+        public void setDeath()
+        {
+            person[0] = "    x    ";
+        }
     }
 }
 
