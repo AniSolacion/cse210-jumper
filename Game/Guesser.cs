@@ -17,23 +17,27 @@ namespace Unit03.Game
         }
     private void addToGuessedLetters()
     {
-        
+        alreadyGuessedLetters.Add(letter);
     }
 
     private bool guessLetter(string input)
     {
         // if the letter is already in the the string of already guessed letters, then the guess is returned as incorrect
         // if letter is in string then ret
-        bool valid = False;
+        bool valid = True;
         foreach (string it in alreadyGuessedLetters)
         {
             
-            if (input != it)
-            {
-                letter = input;
-                valid = True;
+            if (input == it)
+            {  
+                valid = False;
             }
            
+        }
+        if (valid == True)
+        {
+            letter = input;
+            this.addToGuessedLetters();
         }
 
         
@@ -41,7 +45,7 @@ namespace Unit03.Game
 
     private string returnLetter()
     {
-
+        return letter;
     }
     }
 }
