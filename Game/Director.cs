@@ -55,10 +55,12 @@ namespace Unit03.Game
         private void GetInputs()
         {
             //Guess letter outputs a bool for if the letter is valid or not.
-            bool valid = false;
-            if (!valid)
+            guess = ioService.ReadText("Enter a letter [a-z]:  ");
+            bool valid = guesser.guessLetter(guess);     
+
+            while (!valid)
             {
-                guess = ioService.ReadText("Enter a letter [a-z]:  ");
+                guess = ioService.ReadText("Please enter a different letter [a-z]:  ");
                 valid = guesser.guessLetter(guess);
             }
 

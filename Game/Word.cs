@@ -26,7 +26,7 @@ namespace Unit03.Game{
         public void replaceBlank(string guessed_ltr){
             for (int i = 0; i < word_as_list.Count();i++) {
                 if(word_as_list[i] == guessed_ltr[0]){
-                    blank_to_be_filled[i] = guessed_ltr;
+                    blank_to_be_filled[i] = guessed_ltr[0];
                     
                 }
             }
