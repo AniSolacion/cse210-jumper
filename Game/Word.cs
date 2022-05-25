@@ -24,10 +24,10 @@ namespace Unit03.Game{
 
         //Replaces the blank_to_be_filled letter if the guessed_ltr letter is inside the word
         public void replaceBlank(string guessed_ltr){
-            for (int i = 0; i < word_as_list.Count();) {
+            for (int i = 0; i < word_as_list.Count();i++) {
                 if(word_as_list[i] == guessed_ltr[0]){
                     blank_to_be_filled[i] = guessed_ltr;
-                    i++;
+                    
                 }
             }
         }  

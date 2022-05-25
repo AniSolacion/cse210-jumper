@@ -109,12 +109,15 @@ namespace Unit03.Game
             if (isPlaying == false && word.getBlank().Contains("_"))
             {
                 ioService.WriteText("Congratulations! you have fallen and have now died. ");
-                ioService.WriteText($"The word you might have been looking for is {word.getWord}");
+                ioService.WriteText($"The word you might have been looking for is : {word.getWord()}");
                 ioService.WriteText("Better luck next time!!");
+                ioService.WriteList(parachute.getParachute());
+                parachute.setDeath();
+                ioService.WriteList(parachute.getPerson());
                 
             }
             else if (isPlaying == false && parachute.getParachute().Count() == 0){
-                ioService.WriteText($"You have successfully not died. The word was {word.getWord}.");
+                ioService.WriteText($"You have successfully not died. The word was : {word.getWord()}.");
             }
             
         }
