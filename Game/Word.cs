@@ -19,5 +19,13 @@ namespace Unit03.Game{
                 }
             }
         }  
+
+        public List<string> getBlank(){
+            return blank_to_be_filled;
+        }
+
+        public List<string> getWord(){
+            return word_as_list;
+        }
     }
 }
