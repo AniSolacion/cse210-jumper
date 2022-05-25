@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace Unit03.Game{
     class Word{
         private List<string> list;

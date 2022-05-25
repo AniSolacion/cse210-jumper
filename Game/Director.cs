@@ -92,6 +92,7 @@ namespace Unit03.Game
             }
             //if there are no more blanks left in the get blanks list
             if (isPlaying == false && word.getBlank().Contains("_"))
+
             {
                 ioService.WriteText("Congratulations! you have fallen and have now died. ");
                 ioService.WriteText($"The word you might have been looking for is {word.getWord}");
