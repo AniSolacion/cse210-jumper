@@ -93,9 +93,13 @@ namespace Unit03.Game
             //if there are no more blanks left in the get blanks list
             if (isPlaying == False && word.getBlank().contains("_"))
             {
-                ioService.WriteText($"Congratulations! you have fallen and have now died. ");
-                ioService.WriteText()
+                ioService.WriteText("Congratulations! you have fallen and have now died. ");
+                ioService.WriteText($"The word you might have been looking for is {word.getWord}");
+                ioService.WriteText("Better luck next time!!");
                 
+            }
+            else if (isPlaying == False && parachute.getParachute().count() != 0){
+                ioService.WriteText($"You have successfully not died. The word was {word.getWord}.");
             }
             
         }
