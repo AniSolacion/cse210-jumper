@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 
 namespace Unit03.Game
@@ -43,7 +44,17 @@ namespace Unit03.Game
 
         public void WriteList(List<string> list)
         {
-            Console.WriteLine(list);
+            foreach (string line in list)
+            {
+                Console.WriteLine(line);
+            }
+        }
+        public void WriteListInLine(List<string> list)
+        {
+            foreach (string line in list)
+            {
+                Console.Write(line);
+            }
         }
 
         /// <summary>

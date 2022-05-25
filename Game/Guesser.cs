@@ -24,17 +24,17 @@ namespace Unit03.Game
     {
         // if the letter is already in the the string of already guessed letters, then the guess is returned as incorrect
         // if letter is in string then ret
-        bool valid = true;
+        bool valid = false;
         foreach (string it in alreadyGuessedLetters)
         {
             
             if (input == it)
             {  
-                valid = false;
+                valid = true;
             }
            
         }
-        if (valid == true)
+        if (valid == false)
         {
             letter = input;
             this.addToGuessedLetters();
