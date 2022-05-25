@@ -22,7 +22,7 @@ namespace Unit03.Game
 
         public void takeRowOffParachute()
         {
-            parachute.removeAt(0);
+            parachute.RemoveAt(0);
         }
         public List<string> getParachute()
         {

@@ -20,30 +20,30 @@ namespace Unit03.Game
         alreadyGuessedLetters.Add(letter);
     }
 
-    private bool guessLetter(string input)
+    public bool guessLetter(string input)
     {
         // if the letter is already in the the string of already guessed letters, then the guess is returned as incorrect
         // if letter is in string then ret
-        bool valid = True;
+        bool valid = true;
         foreach (string it in alreadyGuessedLetters)
         {
             
             if (input == it)
             {  
-                valid = False;
+                valid = false;
             }
            
         }
-        if (valid == True)
+        if (valid == true)
         {
             letter = input;
             this.addToGuessedLetters();
         }
 
-        
+        return valid;
     }
 
-    private string returnLetter()
+    public string returnLetter()
     {
         return letter;
     }

@@ -41,6 +41,11 @@ namespace Unit03.Game
             return Console.ReadLine();
         }
 
+        public void WriteList(List<string> list)
+        {
+            Console.WriteLine(list);
+        }
+
         /// <summary>
         /// Displays the given text on the terminal. 
         /// </summary>

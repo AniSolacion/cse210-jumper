@@ -12,7 +12,7 @@ namespace Unit03.Game
         private Word word = new Word();
         private Parachute parachute = new Parachute();
         private IOService ioService = new IOService();
-        private bool isPlaying = True;
+        private bool isPlaying = true;
         private string guess;
 
         /// <summary>
@@ -24,9 +24,9 @@ namespace Unit03.Game
             ioService.WriteText("Guess the word before the jumper dies!!");
             // get new word from word
             
-            ioService.WriteText(word.getBlank());
-            ioService.WriteText(parachute.getParachute());
-            ioService.WriteText(parachute.getPerson());
+            ioService.WriteList(word.getBlank());
+            ioService.WriteList(parachute.getParachute());
+            ioService.WriteList(parachute.getPerson());
 
         }
 
@@ -64,9 +64,9 @@ namespace Unit03.Game
         private void DoUpdates()
         {
             //if the letter is in the word
-            if (word.getWord().contains(guess))
+            if (word.getWord().Contains(guess))
             {
-                word.replaceBlank();
+                word.replaceBlank(guess);
             }
             else{
                 parachute.takeRowOffParachute();
@@ -81,24 +81,24 @@ namespace Unit03.Game
         /// </summary>
         private void DoOutputs()
         {
-            if(word.getBlank().contains("_") && parachute.getParachute().count() == 0)
+            if(word.getBlank().Contains("_") && parachute.getParachute().Count() == 0)
             {
-                ioService.WriteText(word.getBlank());
-                ioService.WriteText(parachute.getParachute());
-                ioService.WriteText(parachute.getPerson());
+                ioService.WriteList(word.getBlank());
+                ioService.WriteList(parachute.getParachute());
+                ioService.WriteList(parachute.getPerson());
             }
             else{
-                isPlaying = False;
+                isPlaying = false;
             }
             //if there are no more blanks left in the get blanks list
-            if (isPlaying == False && word.getBlank().contains("_"))
+            if (isPlaying == false && word.getBlank().Contains("_"))
             {
                 ioService.WriteText("Congratulations! you have fallen and have now died. ");
                 ioService.WriteText($"The word you might have been looking for is {word.getWord}");
                 ioService.WriteText("Better luck next time!!");
                 
             }
-            else if (isPlaying == False && parachute.getParachute().count() != 0){
+            else if (isPlaying == false && parachute.getParachute().Count() != 0){
                 ioService.WriteText($"You have successfully not died. The word was {word.getWord}.");
             }
             
