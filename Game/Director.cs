@@ -8,10 +8,12 @@ namespace Unit03.Game
     /// </summary>
     public class Director
     {
-        private Hider hider = new Hider();
-        private bool isPlaying = true;
-        private Seeker seeker = new Seeker();
+        private Guesser guesser = new Guesser();
+        private Word word = new Word();
+        private Parachute parachute = new Parachute();
         private IOService ioService = new IOService();
+        private bool isPlaying = true;
+        private string guess;
 
         /// <summary>
         /// Constructs a new instance of Director.
@@ -41,6 +43,15 @@ namespace Unit03.Game
             ioService.WriteText(hider.location.ToString());
             int location = ioService.ReadNumber("\nEnter a location [1-1000]: ");
             seeker.MoveLocation(location);
+
+            //Guess letter outputs a bool for if the letter is valid or not.
+            bool valid = false;
+            if (!valid)
+            {
+                guess = ioService.ReadText("Enter a letter: ");
+                valid = guesser.guessLetter(guess);
+            }
+
         }
 
         /// <summary>
