@@ -34,6 +34,10 @@ namespace Unit03.Game
             }
            
         }
+        if (valid == true && input.Length != 1)
+        {
+            valid = false;
+        }
         if (valid == true)
         {
             letter = input;
